@@ -1,0 +1,152 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\emergencystretch}{3em}
+
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\setlist[itemize]{itemsep=2pt, topsep=2pt}
+
+\newcommand{\resumeItem}[1]{
+  \item \small{#1}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      #1 & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+% Single-line heading like the original, but wraps if too long
+\newcommand{\resumeProjectHeading}[2]{
+    \item \small#1 \hfill #2
+    \vspace{-4pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*, itemsep=2pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge Rabeeh Ahmad} \\ \vspace{1pt}
+    \small +91 9545513009 $|$
+    \href{mailto:rabeeh.ahmad@gmail.com}{rabeeh.ahmad@gmail.com} $|$
+    \href{https://github.com/rabeeh18}{github.com/rabeeh18} $|$
+    \href{https://leetcode.com/u/rabeeh1808/}{LeetCode: rabeeh1808}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{\textbf{Thapar Institute of Engineering and Technology}}{Patiala, Punjab}
+{Bachelor of Engineering in Computer Engineering}{2024 -- Present}
+\resumeItemListStart
+\resumeItem{CGPA: 9.55 / 10}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\href{https://rabeeh18.github.io/ucs503p-202627-MemoryLane/getting-started/running/}
+{\textbf{MemoryLane --- Semantic Webpage Memory and Retrieval System}}
+$|$ \emph{FastAPI, Apache Solr, Sentence Transformers, Gemini API}}
+{}
+
+\resumeItemListStart
+\resumeItem{Built an end-to-end webpage memory system that captures webpages through a browser extension, processes and chunks their content, and stores them for high-speed retrieval through a FastAPI backend.}
+\resumeItem{Implemented hybrid information retrieval combining \textbf{BM25 lexical search} with \textbf{dense vector search} using the \textbf{all-MiniLM-L6-v2} embedding model and Apache Solr 9.7.}
+\resumeItem{Designed a high-performance retrieval pipeline that normalizes and combines lexical and semantic scores, ranks results at the webpage level, and retrieves relevant content from a shared collection of webpages.}
+\resumeItem{Integrated the Gemini API to generate query-focused summaries from retrieved webpage content, enabling natural-language exploration of stored memories.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{Swarm Robotics --- Multi-Robot Reinforcement Learning}
+$|$ \emph{Python, ROS 2, Gazebo, Reinforcement Learning}}
+{}
+
+\resumeItemListStart
+\resumeItem{Developed a multi-agent reinforcement learning system where multiple robots collaborate to achieve a common goal in a simulated environment.}
+\resumeItem{Implemented ROS 2 integration with Gazebo simulator for realistic physics-based simulation, enabling coordination between distributed robot agents.}
+\resumeItem{Designed reinforcement learning algorithms enabling emergent swarm behavior without explicit centralized control, allowing robots to learn cooperative strategies through interaction.}
+\resumeItem{Built an evaluation pipeline to measure collective performance through task completion time, coordination efficiency, and scalability across agent counts.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\href{https://sadak.site}
+{\textbf{Sadak --- Real-Time Fleet Operations Control Tower}}
+$|$ \emph{Java, Spring Boot, PostgreSQL, WebSocket, AWS EC2}}
+{}
+
+\resumeItemListStart
+\resumeItem{Built and deployed (\href{https://sadak.site}{sadak.site}) a delivery operations platform that streams live truck positions over \textbf{WebSocket (STOMP)} and recomputes an ETA for every stop from road time, observed pace and service time.}
+\resumeItem{Designed an explainable \textbf{rule engine} that checks every live trip every 4 seconds and opens incidents with an owner and timeline; for breakdowns it ranks replacement trucks and moves cargo in a \textbf{single transaction}.}
+\resumeItem{Kept data consistent under concurrency with \textbf{optimistic and pessimistic locking}, partial unique indexes and Flyway migrations on a 24-table PostgreSQL schema, backed by 38 automated tests.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=2pt]
+\item[] \small
+\textbf{Languages}: C / C++, Java, Python, JavaScript, SQL \\
+\textbf{ML / DL}: TensorFlow, Keras, LSTM, Feature Engineering, Scikit-learn, Random Forest, Sentence Transformers \\
+\textbf{Information Retrieval}: BM25, Vector Search, Hybrid Search, Semantic Search, Embeddings, Apache Solr \\
+\textbf{Data Processing}: Pandas, NumPy, StandardScaler, Exploratory Data Analysis \\
+\textbf{Backend}: Spring Boot, Spring Security, JPA / Hibernate, FastAPI, Node.js, Express, REST APIs, WebSocket \\
+\textbf{Databases}: PostgreSQL, MySQL, Flyway \\
+\textbf{Generative AI}: Gemini API, Retrieval-Augmented Generation (RAG), Query-Focused Summarization \\
+\textbf{Developer Tools}: Git, GitHub, Docker, AWS EC2, Linux, Maven, VS Code, ROS 2, Gazebo \\
+\textbf{Competitive Programming}: 200+ LeetCode problems solved (graphs, DSA, DP) \\
+\textbf{Concepts}: Data Structures and Algorithms, Object-Oriented Programming, DBMS, Operating Systems, Machine Learning Fundamentals
+\end{itemize}
+
+\end{document}
